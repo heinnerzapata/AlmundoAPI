@@ -1,0 +1,27 @@
+{
+  "name": "almundoapi",
+  "version": "1.0.0",
+  "description": "Almundo api",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heinnerzapata/AlmundoAPI.git"
+  },
+  "author": "mrhz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heinnerzapata/AlmundoAPI/issues"
+  },
+  "homepage": "https://github.com/heinnerzapata/AlmundoAPI#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jsonfile": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
