@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/heinnerzapata/AlmundoAPI#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",    
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "jsonfile": "^4.0.0"
+    "is-file-exists": "^1.1.0",
+    "jsonfile": "^4.0.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^1.14.11"

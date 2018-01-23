@@ -3,6 +3,8 @@
 const config = require('./Config.js')
 const jsonfile = require('jsonfile')
 const Hotel = require('../Models/Hotel.js')
+const path = require("path");
+var fs = require('fs');
 
 const getHotels = () => {
   return new Promise(function(resolve, reject){
@@ -16,8 +18,20 @@ const getHotels = () => {
           }
           else
           {
-            hotels = obj.map((o) => new Hotel(o.id, o.name, o.stars, o.price, o.image, o.amenities))
+            hotels = obj.map( function (o) {
+
+
+                  try {
+                  fs.accessSync(path.resolve(__dirname, '../public/hotels/' + o.image), fs.F_OK);
+                      return new Hotel(o.id, o.name, o.stars, o.price, 'https://almundoapi.azurewebsites.net/static/hotels/' + o.image, o.amenities)
+                  } catch (e) {
+                     return new Hotel(o.id, o.name, o.stars, o.price, '', o.amenities)
+                  }
+
+            })
+
             resolve(hotels)
+
           }
         })
         break;
